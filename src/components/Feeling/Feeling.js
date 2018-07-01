@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 
 const mapReduxStateToProps = (reduxStore) => ({
     reduxStore
@@ -11,7 +10,8 @@ class Feeling extends Component {
     constructor() {
         super();
           this.state = {
-            feeling: 0,
+            feeling: '',
+            toNext: false,
           }
         }
       
@@ -24,22 +24,22 @@ class Feeling extends Component {
         handleClick = (event) => {
             const action = {type: 'FEELING', payload: this.state.feeling};
             this.props.dispatch(action);
-            this.clearInputs();
-        }
-      
-        clearInputs() {
-          this.setState({
-            feeling: 0,
-          })
+            this.setState(() => ({
+                toNext: true,
+            }));
         }
 
     render() {
+        if(this.state.toNext === true){
+            return <Redirect to='/2' />
+        }
         return (
             <div>
                 <h3>1 of 4 Pages</h3>
+                <label>How are you feeling today?</label>
+                <br/>
                 <input type="number" onChange={this.handleFeelingChange} value={this.state.feeling} />
-                <button onClick={this.handleClick}>Next</button>
-                <Link to="/understanding">Next</Link>  
+                <button onClick={this.handleClick}>Next</button>  
             </div>    
         )
     }
