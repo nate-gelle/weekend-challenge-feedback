@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {HashRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -11,6 +12,14 @@ class App extends Component {
           <h4><i>Don't forget it!</i></h4>
         </header>
         <br/>
+        <Router>
+          <div>
+            <Route exact path="/" component={ColorPage} />
+            <Route exact path="/2" component={Counter} />
+            <Route exact path="/counter" component={Counter} />
+            <Route exact path="/counter" component={Counter} />
+          </div> 
+      </Router>
       </div>
     );
   }
