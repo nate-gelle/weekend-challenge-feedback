@@ -5,37 +5,32 @@ import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import logger from 'redux-logger'; // Makes development easier
+import logger from 'redux-logger';
 
-// This will increase or decrease a number, starts at 0 (default)
-// Whatever we return, is passed in as 'state' on the next function call
 const feelingReducer = (state = 0, action) => {
-    // Filter down to specific action types
     if(action.type === 'FEELING') {
-        // return the new state
         return action.payload;
-        // nothing after a return is called
     }
-    return state; // return the current state if no changes were made
+    return state;
 }
 
 const understandingReducer = (state = 0, action) => {
     if(action.type === 'UNDERSTANDING') {
-        return action.payload; // this is the array of colors from the server
+        return action.payload;
     }
     return state;
 }
 
 const supportReducer = (state = 0, action) => {
     if(action.type === 'SUPPORT') {
-        return action.payload; // this is the array of colors from the server
+        return action.payload;
     }
     return state;
 }
 
 const commentReducer = (state = '', action) => {
     if(action.type === 'COMMENT') {
-        return action.payload; // this is the array of colors from the server
+        return action.payload;
     }
     return state;
 }
