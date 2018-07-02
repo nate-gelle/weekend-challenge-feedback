@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {Redirect} from 'react-router-dom';
+import Button from 'material-ui/Button';
 
 const mapReduxStateToProps = (reduxStore) => ({
     reduxStore
@@ -39,7 +40,9 @@ class Feeling extends Component {
                 <label>How are you feeling today?</label>
                 <br/>
                 <input type="number" onChange={this.handleFeelingChange} value={this.state.feeling} />
-                <button onClick={this.handleClick}>Next</button>  
+                <br/>
+                <br/>
+                <Button variant="raised" color="primary" onClick={this.handleClick}>Next</Button>  
             </div>    
         )
     }

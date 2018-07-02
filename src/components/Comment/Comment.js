@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {Redirect} from 'react-router-dom';
+import Button from 'material-ui/Button';
 
 const mapReduxStateToProps = (reduxStore) => ({
     reduxStore
@@ -39,7 +40,9 @@ class Comment extends Component {
                 <label>Any comments you want to share?</label>
                 <br/>
                 <input type="text" onChange={this.handleCommentChange} value={this.state.comment} />
-                <button onClick={this.handleClick}>Next</button> 
+                <br/>
+                <br/>
+                <Button variant="raised" color="primary" onClick={this.handleClick}>Next</Button> 
             </div>    
         )
     }
