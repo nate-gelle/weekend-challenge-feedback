@@ -30,9 +30,10 @@ class FeedbackEntry extends Component {
         }).catch((error) => {
             alert('Unable to flag entry.')
         });
+        this.showFlagged();
     }
 
-    showFlagged = () => {
+    showFlagged = (event) => {
         if(this.props.entry.flagged === true){
             this.setState({flagged: {backgroundColor: 'grey'}});
             console.log('in showFlagged, state=', this.state);
