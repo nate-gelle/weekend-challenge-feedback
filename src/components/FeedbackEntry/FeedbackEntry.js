@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class FeedbackEntry extends Component {
-    constructor() {
-        super();
-        this.state = {flagged: {}};
-        this.showFlagged = this.showFlagged.bind(this);
-    }
+    // constructor() {
+    //     super();
+        // this.state = {flagged: {}};
+        // this.showFlagged = this.showFlagged.bind(this);
+    // }
 
     deleteEntry = (event) => {
         const id = this.props.entry.id;
@@ -27,26 +27,26 @@ class FeedbackEntry extends Component {
         axios.put(`/feedback/${id}/${flagged}`).then((response) => {
             console.log(response.data);
             this.props.getFeedback();
+            // this.showFlagged();
         }).catch((error) => {
             alert('Unable to flag entry.')
         });
-        this.showFlagged();
     }
 
-    showFlagged = (event) => {
-        if(this.props.entry.flagged === true){
-            this.setState({flagged: {backgroundColor: 'grey'}});
-            console.log('in showFlagged, state=', this.state);
-        }    
-    }
+    // showFlagged = (event) => {
+    //     if(this.props.entry.flagged === true){
+    //         this.setState({flagged: {backgroundColor: 'grey'}});
+    //         console.log('in showFlagged, state=', this.state);
+    //     }    
+    // }
 
     componentDidMount = () =>{
-        this.showFlagged();
+        // this.showFlagged();
     }
 
     render() {
         return (
-            <tr style={this.state.flagged}>
+            <tr style={{backgroundColor: this.props.entry.flagged? 'grey' : 'white'}}>
                 <td>{this.props.entry.feeling}</td>
                 <td>{this.props.entry.understanding}</td>
                 <td>{this.props.entry.support}</td>

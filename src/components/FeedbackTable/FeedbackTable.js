@@ -34,6 +34,7 @@ class FeedbackTable extends Component {
                             <th>Support</th>
                             <th>Comment</th>
                             <th>Delete</th>
+                            <th>Flag</th>
                         </tr>
                     </thead>    
                     <tbody>

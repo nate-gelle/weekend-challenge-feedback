@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import Card from 'material-ui/Card';
 import {Redirect} from 'react-router-dom';
+import './Thanks.css';
 
 const mapReduxStateToProps = (reduxStore) => ({
     reduxStore
@@ -47,10 +49,10 @@ class Thanks extends Component {
             return <Redirect to='/' />
         }
         return (
-            <div>
+            <Card className="card">
                 <h2>Thank You!</h2>
                 <button onClick={this.handleClick}>Leave New Feedback</button>  
-            </div>    
+            </Card>    
         )
     }
 }

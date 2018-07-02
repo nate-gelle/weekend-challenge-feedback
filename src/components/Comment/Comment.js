@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {Redirect} from 'react-router-dom';
+import Card from 'material-ui/Card';
 import Button from 'material-ui/Button';
+import './Comment.css';
 
 const mapReduxStateToProps = (reduxStore) => ({
     reduxStore
@@ -35,7 +37,7 @@ class Comment extends Component {
             return <Redirect to='/5' />
         }
         return (
-            <div>
+            <Card className="card">
                 <h3>4 of 4 Pages</h3>
                 <label>Any comments you want to share?</label>
                 <br/>
@@ -43,7 +45,7 @@ class Comment extends Component {
                 <br/>
                 <br/>
                 <Button variant="raised" color="primary" onClick={this.handleClick}>Next</Button> 
-            </div>    
+            </Card>    
         )
     }
 }

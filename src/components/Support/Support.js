@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {Redirect} from 'react-router-dom';
+import Card from 'material-ui/Card';
 import Button from 'material-ui/Button';
+import './Support.css';
 
 const mapReduxStateToProps = (reduxStore) => ({
     reduxStore
@@ -35,15 +37,15 @@ class Support extends Component {
             return <Redirect to='/4' />
         }
         return (
-            <div>
+            <Card className="card">
                 <h3>3 of 4 Pages</h3>
                 <label>How well are you being supported?</label>
                 <br/>
-                <input type="number" onChange={this.handleSupportChange} value={this.state.support} />
+                <input min="1" max="5" type="number" onChange={this.handleSupportChange} value={this.state.support} />
                 <br/>
                 <br/>
                 <Button variant="raised" color="primary" onClick={this.handleClick}>Next</Button>  
-            </div>    
+            </Card>    
         )
     }
 }

@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import FeedbackTable from '../FeedbackTable/FeedbackTable';
+import Card from 'material-ui/Card';
+import './Admin.css';
 
 class Admin extends Component {
     render() {
         return (
-            <div>
+            <Card className="card">
                 <header><h1>Feedback Results!</h1></header>
                 <FeedbackTable />
-            </div>
+            </Card>
         );
     }
 }
