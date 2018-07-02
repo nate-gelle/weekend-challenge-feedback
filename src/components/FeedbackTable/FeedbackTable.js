@@ -7,7 +7,7 @@ class FeedbackTable extends Component {
         super();
           this.state = {
             listOfEntries: [],
-          }
+          };
         }
     
     getFeedback = () => {
@@ -16,7 +16,8 @@ class FeedbackTable extends Component {
             this.setState({listOfEntries: [...response.data]});
             console.log('listOfEntries:', this.state.listOfEntries);
         });
-    }    
+        
+    }
 
     componentDidMount = () => {
         this.getFeedback();
