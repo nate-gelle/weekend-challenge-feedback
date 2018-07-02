@@ -21,15 +21,14 @@ class Thanks extends Component {
       
         sendFeedbackToDB = () => {
             console.log(this.state);
-            
-          const body = {feeling: this.state.feeling, understanding: this.state.understanding, support: this.state.support, comment: this.state.comment};
-          console.log(body);
-          
-          axios.post('/feedback', body).then((response) => {
-            console.log(response);
-          }).catch((error) => {
-            alert('Something BAD');
-            console.log(error);
+            const body = {feeling: this.state.feeling, understanding: this.state.understanding, support: this.state.support, comment: this.state.comment};
+            console.log(body);
+            axios.post('/feedback', body).then((response) => {
+                console.log(response);
+                alert('Feedback successfully submitted! WOOT!')
+            }).catch((error) => {
+                alert('Uh Oh! We were unable to process your feedback submission. Please contact a local developer or try again.');
+                console.log(error);
           });
         }
 
