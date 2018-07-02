@@ -58,3 +58,19 @@ Display all of the existing feedback at the route `/admin`. The most recently ad
 
 
 > NOTE: These stretch goals are intended to be completed in order.
+
+## Prerequisites:
+- Node.js
+- Postgresql
+- React.js
+- Redux
+
+## Installing
+- Download project
+- npm install
+- npm run server
+- in another terminal, npm run client
+
+## Authors
+- Prime Staff
+- Nate Gelle
