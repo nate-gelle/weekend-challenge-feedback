@@ -6,7 +6,7 @@ class FeedbackEntry extends Component {
     //     super();
         // this.state = {flagged: {}};
         // this.showFlagged = this.showFlagged.bind(this);
-    // }
+    // } 
 
     deleteEntry = (event) => {
         const id = this.props.entry.id;

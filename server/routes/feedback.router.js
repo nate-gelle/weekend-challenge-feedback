@@ -8,10 +8,10 @@ router.post('/', (req, res) => {
     Values ($1, $2, $3, $4);`;
     pool.query(queryText, [req.body.feeling, req.body.understanding, req.body.support, req.body.comment])
         .then((result) => {
-            res.sendStatus(201);
+            res.sendStaitus(201);
         })
         .catch((error) => {
-            console.log(`Error handling POST for /heroes`, error);
+            console.log(`Error handling POST for /feedback`, error);
             res.sendStatus(500);                   
         })
 });

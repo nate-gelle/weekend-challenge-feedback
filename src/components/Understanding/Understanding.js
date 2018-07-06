@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-importth
+import { connect } from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import Card from 'material-ui/Card';
 import Button from 'material-ui/Button';
